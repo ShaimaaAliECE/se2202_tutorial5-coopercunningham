@@ -11,12 +11,14 @@ document.getElementById('c7').className = 'button';
 document.getElementById('c8').className = 'button';
 document.getElementById('c9').className = 'button';
 // use the value stored in the nextPlayer variable to indicate who the next player is
-
+document.getElementById('next-lbl').textContent=(nextPlayer);
 //This call will create the buttons needed for the gameboard.
 createGameBoard()
 
 function createGameBoard() // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
 {
+    //btns is array
+    //buttons is empty array
     let btns = Array.from(document.querySelectorAll('.button'));
     let buttons = [];
     for (let i=0; i<btns.length; i++)
@@ -44,6 +46,7 @@ function takeCell(event)
     }else{
         nextPlayer = 'X'
     }
+    document.getElementById('next-lbl').textContent=(nextPlayer);
 
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
